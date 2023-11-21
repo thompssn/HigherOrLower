@@ -2,10 +2,30 @@ import random
 import time
 
 def user_mode():
-  ###
+  print("Welcome to user mode! You will guess a randomized number.")
+
+  lower_limit=int(input("Enter the lower limit of the range: "))
+  upper_limit=int(input("Enter the upper limit of the range: "))
+
+  secret_number=random.randint(lower_limit,upper_limit)
+
+  user_guess=""
+  guesses_count=0
+
+  while user_guesses != secret_number:
+    user_guess=int(input(f"Guess the number between {lower_limit}  and {upper_limit}: "))
+    guesses_count += 1
+
+    if user_guess < secret_number:
+      print("Too Low! Try Again.")
+    elif user_guess > secret_number:
+      print("Too High! Try Again.")
+  print( f"Congratulations! You Guessed the correct number {secret_number} in {guesses_count} guesses.")
+  
+  
 
 def computer_mode():
-    print("Welcome to computer mode! The computer will guess your number.")
+    print("Welcome to computer mode! The computer will guess your number.")  
     
     # get the range and the secret number from the user
     lower_limit = int(input("Enter the lower limit of the range: "))
